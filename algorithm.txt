@@ -1,0 +1,26 @@
+**I have got the input as  a matrix with numpy**
+
+
+1.  First thing is calculate the net amount for each person. 
+     That can be calculated by subtracting 'total amount debited' from 'total amount credited '.
+     These net amounts are added to a list "netamount".
+
+     In the given example: netamount=[-7000,-5000,12000]
+
+2.  In the list "netamount", find the maximum and minimum amount. 
+     The max positive value in the list will be the max amount credited to a person(maxcredit)., 
+     and the  minimum negative value will be the maximum amount debited(maxdebit). 
+
+3.  find the minimum of maxcredit and maxdebit.  min=min(maxcredit,maxdebit).
+
+4.  debit   min from the person who debited maximum(index of maxdebit) and
+     credit the amount to the person  credited maximum.
+    
+     netamount=[0,-5000,5000] A paid 7000 to C
+     
+5.  Now recur the same process. maxcredit is 5000 maxdebit is -5000. 
+     min = -5000. debit 5000 from B and credit to C. B's debt is over. B paid 5000 to C
+
+    netamount=[0,0,0].
+
+This algorithm will be applicable for any number of persons and any number of transactions.
